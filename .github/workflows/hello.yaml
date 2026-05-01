@@ -3,7 +3,7 @@ name: Hello Bun CI
 on:
   workflow_dispatch:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
 
