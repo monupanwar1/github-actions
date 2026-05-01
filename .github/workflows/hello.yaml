@@ -1,0 +1,26 @@
+name: Hello Bun CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 👋 Greeting
+      run: echo "Hello from bun"
+
+  run-app:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 📥 Checkout
+      uses: actions/checkout@v4
+
+    - name: 🥟 Setup Bun
+      uses: oven-sh/setup-bun@v1
+
+    - name: ▶️ Run Bun App
+      run: bun run index.ts
