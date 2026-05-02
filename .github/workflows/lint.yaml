@@ -1,0 +1,22 @@
+name: Lint
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
+
+    - name: Setup bun
+      uses: oven-sh/setup-bun@v2
+
+    - name: Install dependencies
+      uses: bun install
+
+    - name: Run Eslint
+      uses: bun run lint
